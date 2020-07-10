@@ -174,7 +174,13 @@
   <div class="row mx-auto index-card">
     
     
-    <div class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/c8acb00db4850faa96ef0f14d2977c6f.png" srcset="/img/loading.gif" alt="offer收割机养成计划">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
       <a class="index-header" href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/">offer收割机养成计划</a>
 
       <a href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/" class="index-excerpt">
@@ -183,10 +189,8 @@
           
         
         <div>
-
 今年暑假我研0，21岁，985软件工程本、cs硕
- --多少得拿个互联网大厂sp才不丢人趴
-现在就在想着2022.7-2022.10时候的秋招了，其实我也知道自己本科很水，可以直接去大厂修福报的话，我也不会来花三四个月考研了（其实也不想太早进入社会,人家还小，QaQ）</div>
+——多少之后就业得拿互联网大厂sp 现在就在想着2022.7-2022.10时候的秋招了，其实我也知道自己本科很水，可以直接去大厂修福报的话，我也不会来花小半年来考研了（其实也不想太早进入社会,人家还小，QaQ）</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -247,7 +251,13 @@
   <div class="row mx-auto index-card">
     
     
-    <div class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/02/27/%E9%87%8D%E5%BB%BA%E6%9C%AC%E7%AB%99%EF%BC%88%E6%94%BE%E5%BC%83%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%89/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/4190d2f1b6454f746f583876c7a79c45.png" srcset="/img/loading.gif" alt="重建本站">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
       <a class="index-header" href="/2020/02/27/%E9%87%8D%E5%BB%BA%E6%9C%AC%E7%AB%99%EF%BC%88%E6%94%BE%E5%BC%83%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%89/">重建本站</a>
 
       <a href="/2020/02/27/%E9%87%8D%E5%BB%BA%E6%9C%AC%E7%AB%99%EF%BC%88%E6%94%BE%E5%BC%83%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%89/" class="index-excerpt">
@@ -351,37 +361,51 @@
 
   <footer class="mt-5">
   <div class="text-center py-3">
+    <p id="hitokoto">:D 获取中...</p>
     <div>
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+      <i class="iconfont icon-love"></i>
+      <script>
+        var now = new Date();
+        function createtime() {
+          var grt = new Date("02/07/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+            snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp" + dnum + "&nbsp天";
+          document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+        }
+        setInterval("createtime()", 250);
+        fetch('https://v1.hitokoto.cn').then(response => response.json()).then(data => {
+          const hitokoto = document.getElementById('hitokoto')
+          hitokoto.innerText = data.hitokoto
+        })
+          .catch(console.error)
+      </script>
+    </div>
+    <!-- <div>
       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
       <i class="iconfont icon-love"></i>
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
-    </div>
+    </div> -->
     
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
 
     
   <!-- 备案信息 -->
@@ -428,8 +452,6 @@
   <script  src="/js/clipboard-use.js" ></script>
 
 
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -526,7 +548,6 @@
       ;
     </script>
   
-
 
 
 
