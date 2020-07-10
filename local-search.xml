@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>前端实习（摸鱼）一周总结</title>
+    <link href="/2020/07/10/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%91%B8%E9%B1%BC%EF%BC%89%E4%B8%80%E5%91%A8%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/07/10/%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%91%B8%E9%B1%BC%EF%BC%89%E4%B8%80%E5%91%A8%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1>1.公司简介</h1><p>这家小公司就在学校附近，每天上下班都看得到学校，熬过去这两月又要回校读研了。老板是你电硕士毕业，他还喊我师弟，面试给放了不少水🐶<br><img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/6dfd41d651aa4eb2bee1ce40cb6554ad.png" srcset="/img/loading.gif" alt="公司"><br>老板接外包，私企国企政府的都接。同事目前做国家电网的项目比较多、还有蜀能、智能环卫撒子的。有的像是门户网站，你会知道为什么我们的学校的选课系统、信息门户都是那样“简洁大方”，把页面逻辑跑通，能用就行，都是十几年前的web技术了。</p><p>技术氛围挺好，大家都是实习生，完成放飞自我，不懂就互相讨论，学得还是挺快的，反正注重结果，项目交付时候的时候一定要有自信。</p><p class="note note-light">没有产品经理、项目经理、测试人员这么一说，前后端直接面对客户开撕需求，真刺激</p><h1>2.vscode调教</h1><p>使用到git进行多人协作开发时候，我习惯使用</p><ul><li>Git blame</li><li>Annotator</li><li>GitLens</li></ul><p>这些插件，可以看到目前项目中代码每一行是谁什么时候写的，方便甩锅（逃</p><p>当时上家公司时候用它的目的是，有些代码写得我看不懂，知道是谁写的，方便找前辈问。最后偶尔看到自己刚入职时候的写的代码都想删了重写（哭）</p><p>还有css取色器插件，可以很方便的修改颜色</p><p>markdown preview enhanced 可以在vscode中渲染查看markdown文件，现在写博客都是使用的markdown格式，这样边写边看效果就会比较方便</p><p>vscode主题Monokai很经典好用，我sublime也是使用的这个主题配色</p><p>关于这些插件都可以写到.vscode/extensions.json 中，发给同事这个文件，vscode就会自动提示安装</p><h1>3.被业务需求淹没</h1><p>环卫项目参与需求</p><ul><li>调度管理-&gt;预警事件<ul><li>每一行记录增加下拉框更多操作，包括查看详情、处理、调度</li></ul></li><li>车辆管理-&gt;加油信息展示、包括搜索查询和导出excel表</li><li>日常办公-&gt;考勤管理-&gt;查看考勤记录<ul><li>增加撤销按钮，填写撤销原因,撤销后此撤销记录扣除的当月考核分数也失效</li></ul></li></ul><h2 id="增加按月显示考勤记录">增加按月显示考勤记录</h2><p>这边使用到element-ui的时间控件，选择到月。一开始设置好绑定日期到格式、默认给我绑定为一个对象了…应该让它绑定为字符串，显示为“2020-05-01 00:00:00”这样， 后端api传参有三个，一个是被考核人员id，另外两个是考核的时间段，即起始时间和截止时间。现在考核的起始时间有了，那么考核截止时间应该为“2020-06-01 00:00:00”这样，于是要用到字符串剪切获取到当前月份，再将其转化为数字+1作为下个月，还要考虑到12月，年份要+1，月份变为1。于是代码会变成下面这样，这是对传入后端api字段的清洗工作</p><pre><code class="hljs reasonml">search<span class="hljs-constructor">ByMonth(<span class="hljs-params">row</span>)</span>&#123;        <span class="hljs-keyword">let</span> startTime = this.revocatRecordFilter.month;        <span class="hljs-keyword">let</span> endTime = ''        <span class="hljs-keyword">if</span>(startTime != null)&#123;          <span class="hljs-keyword">let</span> month = startTime.substring(<span class="hljs-number">5</span>,<span class="hljs-number">7</span>);          <span class="hljs-keyword">let</span> nextMonth = (parse<span class="hljs-constructor">Int(<span class="hljs-params">month</span>)</span>+<span class="hljs-number">1</span>).<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;          <span class="hljs-keyword">let</span> year = parse<span class="hljs-constructor">Int(<span class="hljs-params">startTime</span>.<span class="hljs-params">substring</span>(0,4)</span>);          endTime = startTime.substring(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)+nextMonth+startTime.substring(<span class="hljs-number">7</span>)          <span class="hljs-keyword">if</span>(month<span class="hljs-operator"> == </span><span class="hljs-number">12</span>)&#123;            nextMonth = <span class="hljs-string">"01"</span>;            year = (year+<span class="hljs-number">1</span>).<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;            endTime = year + <span class="hljs-character">'-'</span> + nextMonth + startTime.substring(<span class="hljs-number">7</span>)          &#125;;        &#125;        this.revocatRecordFilter.starttime = startTime;        this.revocatRecordFilter.endtime = endTime;        this.record<span class="hljs-constructor">Get(<span class="hljs-params">row</span>)</span>;      &#125;,</code></pre><p>还要考虑到时间控件清空后，起止时间都要清空</p><p>另外还有一个参数人员id，原先写得查询函数是从上级点进来作为参数传进来的，并没有单独保存，但有将它存入localstorage。<br>于是这边我月查询时候，从localstorage中获取它就可以</p><pre><code class="hljs reasonml">record<span class="hljs-constructor">Get(<span class="hljs-params">row</span>)</span> &#123;        <span class="hljs-keyword">if</span>(row.adminId != null)&#123;          localStorage.set<span class="hljs-constructor">Item('<span class="hljs-params">userId</span>', <span class="hljs-params">row</span>.<span class="hljs-params">adminId</span>)</span>;        &#125;<span class="hljs-operator">...</span><span class="hljs-keyword">let</span> param = &#123;          parameters: &#123;            adminId: localStorage.get<span class="hljs-constructor">Item('<span class="hljs-params">userId</span>')</span>,            starttime:this.revocatRecordFilter.starttime,            endtime:this.revocatRecordFilter.endtime          &#125;        &#125;…</code></pre><p>之后再chrome network面板查看发出的网络请求，看参数是否符合预期</p><blockquote><p>和后端API对参数，有时候好恶心( :<br>这边后端同学用的Swagger、写了上千个接口了，真实curd boy</p></blockquote><p>近期工作就查element-ui与echarts的文档比较多</p><h1>4.未来实习打算</h1><p>本周就是上班时间摸鱼把博客给重新施工了一下，转眼就周五了，时间过得好快</p><p>打算以后上班闲了就刷刷前端面经，了解大厂的面试要求，再总结自己实际coding中的一些tricks与思考</p><p>未来可期 ~喵&gt;_&lt;</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>plan</tag>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>offer收割机养成计划</title>
     <link href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/"/>
     <url>/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/</url>
@@ -55,8 +76,6 @@
     <tags>
       
       <tag>hexo</tag>
-      
-      <tag>blog</tag>
       
     </tags>
     

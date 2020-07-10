@@ -17,10 +17,19 @@
   <meta name="description" content="98five的程序员自救记录">
   <meta name="author" content="shell0108">
   <meta name="keywords" content="">
-  <title>Tags - blog - 果壳的博客</title>
+  <title>前端实习（摸鱼）一周总结 - 果壳的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -49,7 +58,7 @@
 <!--浏览器搞笑标题-->
 <script type="text/javascript" src="/js/FunnyTitle.js"></script>
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -137,7 +146,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/5793604bcdabe205171604994dce4432.png') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/1ad7b9c4bd31fd6a4c5183e1b996a670.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -145,6 +154,40 @@
             <span class="h2" id="subtitle">
               
             </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-07-10 18:15">
+      July 10, 2020 pm
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -157,37 +200,163 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">1 posts in total.</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/02/27/%E9%87%8D%E5%BB%BA%E6%9C%AC%E7%AB%99%EF%BC%88%E6%94%BE%E5%BC%83%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%89/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">重建本站</span>
-      <span style="float: right;">02-27</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：a minute ago
+                
+              </p>
+            
+            <article class="markdown-body">
+              <h1>1.公司简介</h1>
+<p>这家小公司就在学校附近，每天上下班都看得到学校，熬过去这两月又要回校读研了。老板是你电硕士毕业，他还喊我师弟，面试给放了不少水🐶<br>
+<img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/10/6dfd41d651aa4eb2bee1ce40cb6554ad.png" srcset="/img/loading.gif" alt="公司"><br>
+老板接外包，私企国企政府的都接。同事目前做国家电网的项目比较多、还有蜀能、智能环卫撒子的。有的像是门户网站，你会知道为什么我们的学校的选课系统、信息门户都是那样“简洁大方”，把页面逻辑跑通，能用就行，都是十几年前的web技术了。</p>
+<p>技术氛围挺好，大家都是实习生，完成放飞自我，不懂就互相讨论，学得还是挺快的，反正注重结果，项目交付时候的时候一定要有自信。</p>
+<p class="note note-light">没有产品经理、项目经理、测试人员这么一说，前后端直接面对客户开撕需求，真刺激</p>
+<h1>2.vscode调教</h1>
+<p>使用到git进行多人协作开发时候，我习惯使用</p>
+<ul>
+<li>Git blame</li>
+<li>Annotator</li>
+<li>GitLens</li>
+</ul>
+<p>这些插件，可以看到目前项目中代码每一行是谁什么时候写的，方便甩锅（逃</p>
+<p>当时上家公司时候用它的目的是，有些代码写得我看不懂，知道是谁写的，方便找前辈问。最后偶尔看到自己刚入职时候的写的代码都想删了重写（哭）</p>
+<p>还有css取色器插件，可以很方便的修改颜色</p>
+<p>markdown preview enhanced 可以在vscode中渲染查看markdown文件，现在写博客都是使用的markdown格式，这样边写边看效果就会比较方便</p>
+<p>vscode主题Monokai很经典好用，我sublime也是使用的这个主题配色</p>
+<p>关于这些插件都可以写到.vscode/extensions.json 中，发给同事这个文件，vscode就会自动提示安装</p>
+<h1>3.被业务需求淹没</h1>
+<p>环卫项目参与需求</p>
+<ul>
+<li>调度管理-&gt;预警事件
+<ul>
+<li>每一行记录增加下拉框更多操作，包括查看详情、处理、调度</li>
+</ul>
+</li>
+<li>车辆管理-&gt;加油信息展示、包括搜索查询和导出excel表</li>
+<li>日常办公-&gt;考勤管理-&gt;查看考勤记录
+<ul>
+<li>增加撤销按钮，填写撤销原因,撤销后此撤销记录扣除的当月考核分数也失效</li>
+</ul>
+</li>
+</ul>
+<h2 id="增加按月显示考勤记录">增加按月显示考勤记录</h2>
+<p>这边使用到element-ui的时间控件，选择到月。一开始设置好绑定日期到格式、默认给我绑定为一个对象了…应该让它绑定为字符串，显示为“2020-05-01 00:00:00”这样， 后端api传参有三个，一个是被考核人员id，另外两个是考核的时间段，即起始时间和截止时间。现在考核的起始时间有了，那么考核截止时间应该为“2020-06-01 00:00:00”这样，于是要用到字符串剪切获取到当前月份，再将其转化为数字+1作为下个月，还要考虑到12月，年份要+1，月份变为1。于是代码会变成下面这样，这是对传入后端api字段的清洗工作</p>
+<pre><code class="hljs reasonml">search<span class="hljs-constructor">ByMonth(<span class="hljs-params">row</span>)</span>&#123;
+        <span class="hljs-keyword">let</span> startTime = this.revocatRecordFilter.month;
+        <span class="hljs-keyword">let</span> endTime = ''
+        <span class="hljs-keyword">if</span>(startTime != null)&#123;
+          <span class="hljs-keyword">let</span> month = startTime.substring(<span class="hljs-number">5</span>,<span class="hljs-number">7</span>);
+          <span class="hljs-keyword">let</span> nextMonth = (parse<span class="hljs-constructor">Int(<span class="hljs-params">month</span>)</span>+<span class="hljs-number">1</span>).<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;
+          <span class="hljs-keyword">let</span> year = parse<span class="hljs-constructor">Int(<span class="hljs-params">startTime</span>.<span class="hljs-params">substring</span>(0,4)</span>);
+          endTime = startTime.substring(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)+nextMonth+startTime.substring(<span class="hljs-number">7</span>)
+          <span class="hljs-keyword">if</span>(month<span class="hljs-operator"> == </span><span class="hljs-number">12</span>)&#123;
+            nextMonth = <span class="hljs-string">"01"</span>;
+            year = (year+<span class="hljs-number">1</span>).<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;
+            endTime = year + <span class="hljs-character">'-'</span> + nextMonth + startTime.substring(<span class="hljs-number">7</span>)
+          &#125;;
+        &#125;
+        this.revocatRecordFilter.starttime = startTime;
+        this.revocatRecordFilter.endtime = endTime;
+        this.record<span class="hljs-constructor">Get(<span class="hljs-params">row</span>)</span>;
+      &#125;,</code></pre>
+<p>还要考虑到时间控件清空后，起止时间都要清空</p>
+<p>另外还有一个参数人员id，原先写得查询函数是从上级点进来作为参数传进来的，并没有单独保存，但有将它存入localstorage。<br>
+于是这边我月查询时候，从localstorage中获取它就可以</p>
+<pre><code class="hljs reasonml">record<span class="hljs-constructor">Get(<span class="hljs-params">row</span>)</span> &#123;
+        <span class="hljs-keyword">if</span>(row.adminId != null)&#123;
+          localStorage.set<span class="hljs-constructor">Item('<span class="hljs-params">userId</span>', <span class="hljs-params">row</span>.<span class="hljs-params">adminId</span>)</span>;
+        &#125;<span class="hljs-operator">
+	...
+	</span><span class="hljs-keyword">let</span> param = &#123;
+          parameters: &#123;
+            adminId: localStorage.get<span class="hljs-constructor">Item('<span class="hljs-params">userId</span>')</span>,
+            starttime:this.revocatRecordFilter.starttime,
+            endtime:this.revocatRecordFilter.endtime
+          &#125;
+        &#125;
+	…</code></pre>
+<p>之后再chrome network面板查看发出的网络请求，看参数是否符合预期</p>
+<blockquote>
+<p>和后端API对参数，有时候好恶心( :<br>
+这边后端同学用的Swagger、写了上千个接口了，真实curd boy</p>
+</blockquote>
+<p>近期工作就查element-ui与echarts的文档比较多</p>
+<h1>4.未来实习打算</h1>
+<p>本周就是上班时间摸鱼把博客给重新施工了一下，转眼就周五了，时间过得好快</p>
+<p>打算以后上班闲了就刷刷前端面经，了解大厂的面试要求，再总结自己实际coding中的一些tricks与思考</p>
+<p>未来可期 ~喵&gt;_&lt;</p>
 
-
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/plan/">plan</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
               </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/">
+                        <span class="hidden-mobile">offer收割机养成计划</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
             </div>
+
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -346,6 +515,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -353,7 +547,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Tag - blog&nbsp;",
+        "前端实习（摸鱼）一周总结&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -368,6 +562,23 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -381,6 +592,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 
