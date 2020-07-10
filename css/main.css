@@ -13,12 +13,15 @@ header,
 body {
   background-color: #eee;
   color: #3c4858;
-  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
+  cursor: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur"), auto;
+  cursor: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/work.cur"), alias;
+  cursor: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur"), auto;
+  cursor: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/normal.cur"), auto;
+  cursor: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/No_Disponible.cur"), auto;
 }
 body a {
   color: #3c4858;
   text-decoration: none;
-  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
@@ -58,7 +61,6 @@ img[srcset] {
 .view {
   position: relative;
   overflow: hidden;
-  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
 }
 .view .mask {
   position: absolute;
@@ -114,7 +116,6 @@ post-content strong {
 }
 .copy-btn {
   display: inline-block;
-  cursor: pointer;
   border-radius: 0.1rem;
   border: none;
   background-color: transparent;
@@ -175,7 +176,6 @@ post-content strong {
   width: 100%;
   height: 6rem;
   text-align: center;
-  cursor: pointer;
   bottom: 0;
 }
 .scroll-down-bar i {
@@ -783,7 +783,6 @@ sup > a::before,
   top: -1rem;
   left: 0;
   color: #757575;
-  cursor: text;
   -webkit-transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
   transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
@@ -802,7 +801,6 @@ input[type=checkbox] {
   width: 1.25rem;
   transition: 0.2s;
   color: #fff;
-  cursor: pointer;
   margin: 0.4rem 0.2rem 0.4rem !important;
   outline: 0;
   border-radius: 0.1875rem;
