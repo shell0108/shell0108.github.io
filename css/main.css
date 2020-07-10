@@ -13,11 +13,12 @@ header,
 body {
   background-color: #eee;
   color: #3c4858;
+  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
 }
 body a {
   color: #3c4858;
   text-decoration: none;
-  cursor: pointer;
+  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
@@ -57,7 +58,7 @@ img[srcset] {
 .view {
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur");
 }
 .view .mask {
   position: absolute;

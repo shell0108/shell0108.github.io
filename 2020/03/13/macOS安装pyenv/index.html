@@ -49,9 +49,14 @@
   <script  src="/js/utils.js" ></script>
 <meta name="generator" content="Hexo 4.2.0"></head>
 
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 <script src="/live2d-widget/autoload.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
 <body>
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
@@ -124,7 +129,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
-                Links
+                リンク
               </a>
             </li>
           
@@ -207,7 +212,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：13 days ago
+                  本文最后更新于：14 days ago
                 
               </p>
             
@@ -247,7 +252,7 @@
                       <a href="/2020/06/26/offer%E6%94%B6%E5%89%B2%E6%9C%BA%E7%9A%84%E5%85%BB%E6%88%90/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">offer收割机养成计划</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">前の記事</span>
                       </a>
                     
                   </div>
@@ -256,7 +261,7 @@
                     
                       <a href="/2020/02/27/%E9%87%8D%E5%BB%BA%E6%9C%AC%E7%AB%99%EF%BC%88%E6%94%BE%E5%BC%83%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%89/">
                         <span class="hidden-mobile">重建本站</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">次の記事</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -273,7 +278,7 @@
     
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;ディレクトリ</p>
   <div id="tocbot"></div>
 </div>
 
@@ -306,7 +311,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">検索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -315,7 +320,7 @@
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+                 for="local-search-input">キーワード</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
