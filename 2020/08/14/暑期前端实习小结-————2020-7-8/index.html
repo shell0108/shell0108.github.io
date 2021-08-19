@@ -170,7 +170,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      2.1k 字
     </span>
   
 
@@ -180,7 +180,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      34
+      32
        分钟
     </span>
   
@@ -228,13 +228,14 @@
 <h2 id="3-1-element-UI使用">3.1 element UI使用</h2>
 <pre><code class="hljs javascript"><span class="hljs-comment">//安装 element-ui</span>
 
-npm install element-ui</code></pre>
-<pre><code class="hljs vue">&#x2F;&#x2F;在main.js里面如下配置
-import Vue from &#39;vue&#39;;
-import ElementUI from &#39;element-ui&#39;;
-import &#39;element-ui&#x2F;lib&#x2F;theme-chalk&#x2F;index.css&#39;;
-import locale from &#39;element-ui&#x2F;lib&#x2F;locale&#x2F;lang&#x2F;zh-CN&#39;
-import App from &#39;.&#x2F;App.vue&#39;;
+npm install element-ui
+</code></pre>
+<pre><code class="hljs vue">//在main.js里面如下配置
+import Vue from &#x27;vue&#x27;;
+import ElementUI from &#x27;element-ui&#x27;;
+import &#x27;element-ui/lib/theme-chalk/index.css&#x27;;
+import locale from &#x27;element-ui/lib/locale/lang/zh-CN&#x27;
+import App from &#x27;./App.vue&#x27;;
 
 Vue.use(ElementUI, &#123;
   locale,
@@ -242,8 +243,8 @@ Vue.use(ElementUI, &#123;
 &#125;);
 
 new Vue(&#123;
-  el: &#39;#app&#39;,
-  render: h &#x3D;&gt; h(App)
+  el: &#x27;#app&#x27;,
+  render: h =&gt; h(App)
 &#125;);</code></pre>
 <p>其余element-ui组件的用法参考它们各自的文档，比较常用的有导航栏、表单、表格、分页、标签页、对话框、卡片等</p>
 <h2 id="3-2-v-router-结合element-ui-导航栏组件">3.2 v-router 结合element-ui 导航栏组件</h2>
@@ -251,15 +252,15 @@ new Vue(&#123;
 <pre><code class="hljs javascript">Vue.use(VueRouter)
   <span class="hljs-keyword">const</span> routes = [
   &#123;
-    <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span>,
     <span class="hljs-attr">component</span>: Home,
-    <span class="hljs-attr">name</span>:<span class="hljs-string">'Home'</span>,
-    <span class="hljs-attr">redirect</span>:<span class="hljs-string">"zhsj"</span>,
+    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;Home&#x27;</span>,
+    <span class="hljs-attr">redirect</span>:<span class="hljs-string">&quot;zhsj&quot;</span>,
     <span class="hljs-attr">children</span>:[
       &#123;
-        <span class="hljs-attr">path</span>:<span class="hljs-string">"zhsj"</span>,
+        <span class="hljs-attr">path</span>:<span class="hljs-string">&quot;zhsj&quot;</span>,
         <span class="hljs-attr">component</span>:ComprehensiveData,
-        <span class="hljs-attr">meta</span>: &#123;<span class="hljs-attr">title</span>: <span class="hljs-string">'综合数据'</span>, <span class="hljs-attr">icon</span>: zhsj, <span class="hljs-attr">iconActive</span>:zhsj&#125;,
+        <span class="hljs-attr">meta</span>: &#123;<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;综合数据&#x27;</span>, <span class="hljs-attr">icon</span>: zhsj, <span class="hljs-attr">iconActive</span>:zhsj&#125;,
       &#125;,
       &#123;
     ...
@@ -267,70 +268,70 @@ new Vue(&#123;
 		...
      
      
-  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'/login'</span>, <span class="hljs-attr">component</span>: Login, <span class="hljs-attr">name</span>: <span class="hljs-string">'Login'</span> &#125;,
-  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'/404'</span>, <span class="hljs-attr">component</span>: NotFound, <span class="hljs-attr">name</span>: <span class="hljs-string">'NotFound'</span> &#125;,
-  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'*'</span>, <span class="hljs-attr">redirect</span>: &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'/404'</span> &#125; &#125;  
+  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login&#x27;</span>, <span class="hljs-attr">component</span>: Login, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Login&#x27;</span> &#125;,
+  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/404&#x27;</span>, <span class="hljs-attr">component</span>: NotFound, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;NotFound&#x27;</span> &#125;,
+  &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;*&#x27;</span>, <span class="hljs-attr">redirect</span>: &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/404&#x27;</span> &#125; &#125;  
 ]
 
 <span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
-  <span class="hljs-attr">mode</span>: <span class="hljs-string">'history'</span>,
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;history&#x27;</span>,
   <span class="hljs-attr">base</span>: process.env.BASE_URL,
   routes
 &#125;)</code></pre>
 <p>上图引入组件的写法采用的是路由懒加载，当路由被访问的时候才访问相应的组件，提高页面的性能</p>
-<pre><code class="hljs vue">&lt;el-menu :default-active&#x3D;&quot;$route.path&quot; router unique-opened active-text-color&#x3D;&quot;#fff&quot; @open&#x3D;&quot;setActiveIndex&quot; @select&#x3D;&quot;setActiveIndex&quot;&gt;
-	&lt;template v-for&#x3D;&quot;(item,index) in $router.options.routes[0].children&quot;&gt;
-  	&lt;el-submenu :index&#x3D;&quot;&#39;&#x2F;&#39; + item.path&quot; :key&#x3D;&quot;&#39;menu-&#39; + index&quot; v-if&#x3D;&quot;item.children&quot;&gt;
-    	&lt;template slot&#x3D;&quot;title&quot; &gt;
-    		&lt;img :src&#x3D;&quot;activeIndex &#x3D;&#x3D;&#x3D; &#39;&#x2F;&#39; + item.path ? item.meta.iconActive : item.meta.icon&quot; style&#x3D;&quot;height:22px;width:22px;margin-right:10px&quot;&gt;
-      	&lt;span slot&#x3D;&quot;title&quot; style&#x3D;&quot;font-size: 16px;color: #fff;&quot; :style&#x3D;&quot;activeIndex &#x3D;&#x3D;&#x3D; &#39;&#x2F;&#39; + item.path ?&#39;color:#fff;font-weight:900;&#39;:&#39;&#39;&quot;&gt;&#123;&#123;item.meta.title&#125;&#125;&lt;&#x2F;span&gt;
-			&lt;&#x2F;template&gt;
+<pre><code class="hljs vue">&lt;el-menu :default-active=&quot;$route.path&quot; router unique-opened active-text-color=&quot;#fff&quot; @open=&quot;setActiveIndex&quot; @select=&quot;setActiveIndex&quot;&gt;
+	&lt;template v-for=&quot;(item,index) in $router.options.routes[0].children&quot;&gt;
+  	&lt;el-submenu :index=&quot;&#x27;/&#x27; + item.path&quot; :key=&quot;&#x27;menu-&#x27; + index&quot; v-if=&quot;item.children&quot;&gt;
+    	&lt;template slot=&quot;title&quot; &gt;
+    		&lt;img :src=&quot;activeIndex === &#x27;/&#x27; + item.path ? item.meta.iconActive : item.meta.icon&quot; style=&quot;height:22px;width:22px;margin-right:10px&quot;&gt;
+      	&lt;span slot=&quot;title&quot; style=&quot;font-size: 16px;color: #fff;&quot; :style=&quot;activeIndex === &#x27;/&#x27; + item.path ?&#x27;color:#fff;font-weight:900;&#x27;:&#x27;&#x27;&quot;&gt;&#123;&#123;item.meta.title&#125;&#125;&lt;/span&gt;
+			&lt;/template&gt;
   
-    	&lt;template v-for&#x3D;&quot;(childItem, childIndex) in item.children&quot;&gt;
-    		&lt;el-menu-item :index&#x3D;&quot;&#39;&#x2F;&#39; + item.path + &#39;&#x2F;&#39; + childItem.path&quot;
-                    :key&#x3D;&quot;&#39;menu-&#39; + index + &#39;-&#39; + childIndex&quot;
-                    v-if&#x3D;&quot;!childItem.meta.isNoNav&quot;
+    	&lt;template v-for=&quot;(childItem, childIndex) in item.children&quot;&gt;
+    		&lt;el-menu-item :index=&quot;&#x27;/&#x27; + item.path + &#x27;/&#x27; + childItem.path&quot;
+                    :key=&quot;&#x27;menu-&#x27; + index + &#x27;-&#x27; + childIndex&quot;
+                    v-if=&quot;!childItem.meta.isNoNav&quot;
                     &gt;            
-      		&lt;i :class&#x3D;&quot;childItem.meta.icon&quot;&gt;&lt;&#x2F;i&gt;
-      		&lt;span slot&#x3D;&quot;title&quot; style&#x3D;&quot;font-size: 16px;color: #fff;&quot; :style&#x3D;&quot;subActiveIndex &#x3D;&#x3D;&#x3D; childItem.path ?&#39;font-weight:900;&#39;:&#39;&#39;&quot; &gt;&#123;&#123;childItem.meta.title&#125;&#125;&lt;&#x2F;span&gt;
-      	&lt;&#x2F;el-menu-item&gt;
-  		&lt;&#x2F;template&gt;
-  	&lt;&#x2F;el-submenu&gt;
-    &lt;el-menu-item :index&#x3D;&quot;&#39;&#x2F;&#39; + item.path&quot; :key&#x3D;&quot;&#39;menu-&#39; + index&quot; v-else-if&#x3D;&quot;!item.meta.isNoNav&quot;&gt;   
-                            &lt;img :src&#x3D;&quot;activeIndex &#x3D;&#x3D;&#x3D; &#39;&#x2F;&#39; + item.path ? item.meta.iconActive : item.meta.icon&quot; style&#x3D;&quot;height:22px;width:22px;margin-right:10px&quot;&gt;
-                            &lt;span slot&#x3D;&quot;title&quot; style&#x3D;&quot;font-size: 16px;color: #fff;&quot; :style&#x3D;&quot;activeIndex &#x3D;&#x3D;&#x3D; &#39;&#x2F;&#39; + item.path ?&#39;font-weight:900;&#39;:&#39;&#39;&quot;&gt;&#123;&#123;item.meta.title&#125;&#125;&lt;&#x2F;span&gt;
-                        &lt;&#x2F;el-menu-item&gt;
-                    &lt;&#x2F;template&gt;
-                &lt;&#x2F;el-menu&gt;</code></pre>
+      		&lt;i :class=&quot;childItem.meta.icon&quot;&gt;&lt;/i&gt;
+      		&lt;span slot=&quot;title&quot; style=&quot;font-size: 16px;color: #fff;&quot; :style=&quot;subActiveIndex === childItem.path ?&#x27;font-weight:900;&#x27;:&#x27;&#x27;&quot; &gt;&#123;&#123;childItem.meta.title&#125;&#125;&lt;/span&gt;
+      	&lt;/el-menu-item&gt;
+  		&lt;/template&gt;
+  	&lt;/el-submenu&gt;
+    &lt;el-menu-item :index=&quot;&#x27;/&#x27; + item.path&quot; :key=&quot;&#x27;menu-&#x27; + index&quot; v-else-if=&quot;!item.meta.isNoNav&quot;&gt;   
+                            &lt;img :src=&quot;activeIndex === &#x27;/&#x27; + item.path ? item.meta.iconActive : item.meta.icon&quot; style=&quot;height:22px;width:22px;margin-right:10px&quot;&gt;
+                            &lt;span slot=&quot;title&quot; style=&quot;font-size: 16px;color: #fff;&quot; :style=&quot;activeIndex === &#x27;/&#x27; + item.path ?&#x27;font-weight:900;&#x27;:&#x27;&#x27;&quot;&gt;&#123;&#123;item.meta.title&#125;&#125;&lt;/span&gt;
+                        &lt;/el-menu-item&gt;
+                    &lt;/template&gt;
+                &lt;/el-menu&gt;</code></pre>
 <h2 id="3-3-组件复用">3.3 组件复用</h2>
 <h3 id="3-3-1-订单详情页">3.3.1 订单详情页</h3>
 <p>​			这里的订单有很多种状态</p>
 <pre><code class="hljs javascript">orderStatusIndex: [
-        <span class="hljs-string">"待支付"</span>,
-        <span class="hljs-string">"未确认"</span>,
-        <span class="hljs-string">"已确认"</span>,****
-        <span class="hljs-string">"进行中"</span>,
-        <span class="hljs-string">"已完成"</span>,
-        <span class="hljs-string">"异常订单-未处理"</span>,
-        <span class="hljs-string">"已取消"</span>,
-        <span class="hljs-string">"异常订单-已处理"</span>
+        <span class="hljs-string">&quot;待支付&quot;</span>,
+        <span class="hljs-string">&quot;未确认&quot;</span>,
+        <span class="hljs-string">&quot;已确认&quot;</span>,****
+        <span class="hljs-string">&quot;进行中&quot;</span>,
+        <span class="hljs-string">&quot;已完成&quot;</span>,
+        <span class="hljs-string">&quot;异常订单-未处理&quot;</span>,
+        <span class="hljs-string">&quot;已取消&quot;</span>,
+        <span class="hljs-string">&quot;异常订单-已处理&quot;</span>
       ]</code></pre>
 <!-- ![截屏2020-08-20上午11.21.42](/Users/shell0108/Desktop/截屏2020-08-20上午11.21.42.png) -->
 <p>经过沟通后的页面逻辑是，很多地方可以点进去查看订单详情，根据订单状态的不同，显示的详情信息会有一些差别。其中如果订单状态是“异常订单—未处理”，还要展示处理异常订单的按钮，点击后再展示具体的处理页面逻辑，如下：</p>
 <!-- ![截屏2020-08-20上午11.28.12](/Users/shell0108/Desktop/截屏2020-08-20上午11.28.12.png) -->
 <p>如果订单状态是“异常订单—已处理”，则显示查看处理记录按钮，点击按钮后展示处理记录，与上面页面有所不同的是，没有了进行异常处理的那些按钮，只是一个纯展示的页面。</p>
 <p>与此同时，这个订单详情页是在对话框里面调用的，需要传入订单的id，根据这个id来向后端查询这个订单的详情。</p>
-<pre><code class="hljs vue">&lt;el-dialog title&#x3D;&quot;订单详情&quot; :visible.sync&#x3D;&quot;orderDetailDlg&quot; width&#x3D;&quot;70%&quot; top&#x3D;&quot;100vh&quot; center&gt;
-      &lt;orderDetail :orderId &#x3D; &quot;currentOrderId&quot;&gt;&lt;&#x2F;orderDetail&gt;
-&lt;&#x2F;el-dialog&gt;
+<pre><code class="hljs vue">&lt;el-dialog title=&quot;订单详情&quot; :visible.sync=&quot;orderDetailDlg&quot; width=&quot;70%&quot; top=&quot;100vh&quot; center&gt;
+      &lt;orderDetail :orderId = &quot;currentOrderId&quot;&gt;&lt;/orderDetail&gt;
+&lt;/el-dialog&gt;
 ...
 ...
-import orderDetail from &quot;@&#x2F;views&#x2F;common&#x2F;orderDetail.vue&quot;;
+import orderDetail from &quot;@/views/common/orderDetail.vue&quot;;
 ...
 components: &#123; orderDetail &#125;</code></pre>
 <p>其中currentOrderId定义在data里面，在点击查看订单详情的时候，从当前订单获取再进行赋值。</p>
 <h2 id="3-4-ES6">3.4 ES6</h2>
-<p>参考 <a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">ES6入门教程——阮一峰</a> 进行学习，并在实际项目中应用</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">ES6入门教程——阮一峰</a> 进行学习，并在实际项目中应用</p>
 <p>常用的有箭头函数、解构赋值、async函数等</p>
 <h2 id="3-5-vuex">3.5 vuex</h2>
 <h2 id="3-6-axiox封装API">3.6 axiox封装API</h2>
@@ -345,11 +346,11 @@ components: &#123; orderDetail &#125;</code></pre>
 <!-- ![image-20200820094837465](/Users/shell0108/Library/Application Support/typora-user-images/image-20200820094837465.png) -->
 <!-- ![截屏2020-08-20上午9.55.51](/Users/shell0108/Desktop/截屏2020-08-20上午9.55.51.png) -->
 <p>给content-left一个最小宽度，当屏幕宽度缩小时候，content-right会挤下去</p>
-<pre><code class="hljs css">@media only screen and (*max-width*: 1535px) &#123;
-  .content-left &#123;
+<pre><code class="hljs css"><span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (*<span class="hljs-attribute">max-width</span>*: <span class="hljs-number">1535px</span>) &#123;
+  <span class="hljs-selector-class">.content-left</span> &#123;
     ···
   &#125;
-  .content-right &#123;
+  <span class="hljs-selector-class">.content-right</span> &#123;
     ···
    &#125;
 &#125;</code></pre>
@@ -464,23 +465,23 @@ components: &#123; orderDetail &#125;</code></pre>
     &#125;
   &#125;</code></pre>
 <p>在vue 模板里面采用v-for循环生成假数据、已查看/ 未查看样式 使用vue的样式绑定</p>
-<pre><code class="hljs vue">&lt;el-card class&#x3D;&quot;box-card&quot; v-for&#x3D;&quot; n in 20&quot; :key&#x3D;&quot;n&quot; style&#x3D;&quot;margin:10px&quot;&gt;
-	&lt;div slot&#x3D;&quot;header&quot; class&#x3D;&quot;clearfix&quot;&gt;
-	  &lt;div :class&#x3D;&quot;&#123; &#39;viewd&#39;: viewd, &#39;unView&#39;: !viewd &#125;&quot;&gt;&lt;&#x2F;div&gt;
-  	&lt;span&gt;xxx大酒店 酒店信息变动&lt;&#x2F;span&gt;
-  	&lt;span :class&#x3D;&quot;&#123; &#39;viewdText&#39;: viewd, &#39;unViewText&#39;: !viewd &#125;&quot;&gt;&#123;&#123;viewd ? &#39;已查看&#39; : &#39;未查看&#39; &#125;&#125;&lt;&#x2F;span&gt;
-  	&lt;span class&#x3D;&quot;time&quot;&gt;2020.5.28&lt;&#x2F;span&gt;
-  	&lt;el-button type&#x3D;&quot;primary&quot; class&#x3D;&quot;detailButton&quot;&gt;查看详情
-  	&lt;&#x2F;el-button&gt;
-  &lt;&#x2F;div&gt;
-  &lt;div&gt;酒店新装修,房间种类有增加,请平台审核通过&lt;&#x2F;div&gt;
-&lt;&#x2F;el-card&gt;</code></pre>
+<pre><code class="hljs vue">&lt;el-card class=&quot;box-card&quot; v-for=&quot; n in 20&quot; :key=&quot;n&quot; style=&quot;margin:10px&quot;&gt;
+	&lt;div slot=&quot;header&quot; class=&quot;clearfix&quot;&gt;
+	  &lt;div :class=&quot;&#123; &#x27;viewd&#x27;: viewd, &#x27;unView&#x27;: !viewd &#125;&quot;&gt;&lt;/div&gt;
+  	&lt;span&gt;xxx大酒店 酒店信息变动&lt;/span&gt;
+  	&lt;span :class=&quot;&#123; &#x27;viewdText&#x27;: viewd, &#x27;unViewText&#x27;: !viewd &#125;&quot;&gt;&#123;&#123;viewd ? &#x27;已查看&#x27; : &#x27;未查看&#x27; &#125;&#125;&lt;/span&gt;
+  	&lt;span class=&quot;time&quot;&gt;2020.5.28&lt;/span&gt;
+  	&lt;el-button type=&quot;primary&quot; class=&quot;detailButton&quot;&gt;查看详情
+  	&lt;/el-button&gt;
+  &lt;/div&gt;
+  &lt;div&gt;酒店新装修,房间种类有增加,请平台审核通过&lt;/div&gt;
+&lt;/el-card&gt;</code></pre>
 <p>最终页面实现效果如下：</p>
 <!-- ![截屏2020-08-20上午10.37.42](/Users/shell0108/Desktop/截屏2020-08-20上午10.37.42.png) -->
 <h3 id="3-7-3-scss">3.7.3 scss</h3>
 <p>可以进行选择器嵌套，与vue模板中的结构相对应，这样写出来就不会显得很乱</p>
 <p>同时进行样式的复用也会方便很多</p>
-<p>更多scss的教程参考  <a href="https://ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">SASS用法指南-阮一峰</a></p>
+<p>更多scss的教程参考  <a target="_blank" rel="noopener" href="https://ruanyifeng.com/blog/2012/06/sass.html">SASS用法指南-阮一峰</a></p>
 <h2 id="3-8部署到阿里云服务器上">3.8部署到阿里云服务器上</h2>
 <h3 id="3-8-1-nginx">3.8.1 nginx</h3>
 <h1>4协作开发</h1>
